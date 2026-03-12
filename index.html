@@ -1,0 +1,266 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <script type="module" crossorigin src="/assets/polyfills-CnZHil5q.js"></script>
+
+    <meta charset="utf-8" />
+    <link rel="shortcut icon" href="/favicon.png" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+    
+    <!-- Cache Control - Allow caching of assets but not HTML -->
+    <meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate" />
+    <meta http-equiv="Pragma" content="no-cache" />
+    <meta http-equiv="Expires" content="0" />
+    
+    <!-- PWA Meta Tags -->
+    <meta name="theme-color" content="" />
+    <meta name="msapplication-TileColor" content="" />
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <meta name="apple-mobile-web-app-status-bar-style" content="default" />
+    <meta name="apple-mobile-web-app-title" content="ELITE SCHOLAR" />
+    <meta name="mobile-web-app-capable" content="yes" />
+    
+    <meta name="version" content="1.0.0" />
+    <meta name="build-time" content="1773345485190" />
+    <meta name="keywords" content="education, learning, school, management, students, teachers, courses, assignments" />
+    <meta name="author" content="ELITE SCHOLAR Team" />
+    
+    <!-- Open Graph Meta Tags -->
+    <meta property="og:title" content="ELITE SCHOLAR - Educational Management System" />
+    <meta property="og:description" content="A comprehensive educational management system for students, teachers, and administrators." />
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content="https://elitescholar.ng" />
+    <meta property="og:image" content="/assets/img/icons/icon-512x512.png" />
+    
+    <!-- Twitter Card Meta Tags -->
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content="ELITE SCHOLAR - Educational Management System" />
+    <meta name="twitter:description" content="A comprehensive educational management system for students, teachers, and administrators." />
+    <meta name="twitter:image" content="/assets/img/icons/icon-512x512.png" />
+    
+    <!-- PWA Manifest -->
+    <link rel="manifest" href="/manifest.json" />
+    
+    <!-- Apple Touch Icons -->
+    <link rel="apple-touch-icon" href="/assets/img/icons/icon-192x192.png" />
+    <link rel="apple-touch-icon" sizes="152x152" href="/assets/img/icons/icon-192x192.png" />
+    <link rel="apple-touch-icon" sizes="180x180" href="/assets/img/icons/icon-192x192.png" />
+    <link rel="apple-touch-icon" sizes="167x167" href="/assets/img/icons/icon-192x192.png" />
+    
+    <!-- Microsoft Tiles -->
+    <meta name="msapplication-TileImage" content="/assets/img/icons/icon-192x192.png" />
+    <meta name="msapplication-config" content="/browserconfig.xml" />
+    
+    <title>ELITE SCHOLAR</title>
+    <script>
+      // Essential polyfills for production
+      (function() {
+        // Only add polyfills if they don't exist
+        if (typeof require === 'undefined') {
+          window.require = function(module) {
+            console.warn('require() called for:', module, '- returning empty object');
+            return {};
+          };
+        }
+        
+        if (typeof global === 'undefined') {
+          window.global = window;
+        }
+        
+        if (typeof process === 'undefined') {
+          window.process = {
+            env: { 
+              NODE_ENV: 'production',
+              REACT_APP_ENV: 'production'
+            },
+            browser: true,
+            version: 'v18.0.0',
+            versions: {},
+            platform: 'browser'
+          };
+        }
+        
+        if (typeof Buffer === 'undefined') {
+          window.Buffer = {
+            isBuffer: function(obj) {
+              return obj != null && obj.constructor != null &&
+                typeof obj.constructor.isBuffer === 'function' && obj.constructor.isBuffer(obj);
+            },
+            from: function(data, encoding) {
+              if (typeof data === 'string') {
+                return new TextEncoder().encode(data);
+              }
+              return data;
+            },
+            alloc: function(size, fill) {
+              const buffer = new Uint8Array(size);
+              if (fill !== undefined) {
+                buffer.fill(fill);
+              }
+              return buffer;
+            }
+          };
+        }
+        
+        // Notification polyfill for iOS Safari
+        if (typeof Notification === 'undefined') {
+          window.Notification = {
+            permission: 'default',
+            requestPermission: function() {
+              return Promise.resolve('denied');
+            }
+          };
+        }
+        
+        // Error handling for common issues
+        window.addEventListener('error', function (e) {
+          if (e.message && e.message.includes('MetaMask')) {
+            e.preventDefault();
+            return;
+          }
+          
+          // Log critical errors for debugging
+          if (e.message && (e.message.includes('React') || e.message.includes('Cannot read'))) {
+            console.error('Critical error detected:', e.message, e.filename, e.lineno);
+          }
+        });
+        
+        // Unhandled promise rejection handling
+        window.addEventListener('unhandledrejection', function(e) {
+          console.error('Unhandled promise rejection:', e.reason);
+          // Don't prevent default to allow debugging
+        });
+      })();
+    </script>
+    <script type="module" crossorigin src="/assets/index-B3sDzLnY.js"></script>
+    <link rel="stylesheet" crossorigin href="/assets/index-CEu9syVt.css">
+  </head>
+
+  <body>
+    <noscript>You need to enable JavaScript to run this app.</noscript>
+    <div id="root">
+      <style>
+        .app-loading {
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          min-height: 100vh;
+          background: linear-gradient(135deg, #0f4c81 0%, #dc143c 100%);
+          font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen', 'Ubuntu', 'Cantarell', sans-serif;
+        }
+        .loading-card {
+          background: white;
+          padding: 40px;
+          border-radius: 12px;
+          box-shadow: 0 10px 40px rgba(0,0,0,0.2);
+          text-align: center;
+          max-width: 400px;
+          margin: 20px;
+        }
+        .loading-logo {
+          width: 80px;
+          height: 80px;
+          margin: 0 auto 20px;
+          background: linear-gradient(135deg, #0f4c81 0%, #dc143c 100%);
+          border-radius: 50%;
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          font-size: 36px;
+          color: white;
+          font-weight: bold;
+        }
+        .loading-title {
+          color: #333;
+          margin: 0 0 10px 0;
+          font-size: 24px;
+          font-weight: 600;
+        }
+        .loading-text {
+          color: #666;
+          margin: 0 0 20px 0;
+          font-size: 14px;
+        }
+        .spinner {
+          border: 4px solid #f3f3f3;
+          border-top: 4px solid #0f4c81;
+          border-radius: 50%;
+          width: 40px;
+          height: 40px;
+          animation: spin 1s linear infinite;
+          margin: 20px auto;
+        }
+        @keyframes spin {
+          0% { transform: rotate(0deg); }
+          100% { transform: rotate(360deg); }
+        }
+        .loading-footer {
+          margin-top: 20px;
+          font-size: 12px;
+          color: #999;
+        }
+      </style>
+      <div class="app-loading">
+        <div class="loading-card">
+          <div class="loading-logo">ES</div>
+          <h2 class="loading-title">ELITE SCHOLAR</h2>
+          <p class="loading-text">Loading your dashboard...</p>
+          <div class="spinner"></div>
+          <p class="loading-footer">Please wait while we prepare your experience</p>
+          <noscript>
+            <p style="color: red; margin-top: 20px; font-weight: bold;">
+              ⚠️ JavaScript is required to use this application.<br>
+              Please enable JavaScript in your browser settings.
+            </p>
+          </noscript>
+        </div>
+      </div>
+    </div>
+    <script>
+      // Auto-reload on new deployment with better cache handling
+      const APP_VERSION = '__BUILD_TIME__';
+      const CHECK_INTERVAL = 2 * 60 * 1000; // Check every 2 minutes
+      
+      function checkForUpdates() {
+        fetch('/index.html?' + Date.now(), { 
+          method: 'HEAD',
+          cache: 'no-cache'
+        })
+        .then(() => {
+          const currentVersion = localStorage.getItem('app_version');
+          if (currentVersion && currentVersion !== APP_VERSION) {
+            console.log('New version detected, clearing cache and reloading...');
+            
+            // Clear all caches
+            if ('caches' in window) {
+              caches.keys().then(names => {
+                names.forEach(name => caches.delete(name));
+              });
+            }
+            
+            // Clear storage
+            localStorage.clear();
+            sessionStorage.clear();
+            
+            // Force reload with cache bypass
+            window.location.reload(true);
+          } else {
+            localStorage.setItem('app_version', APP_VERSION);
+          }
+        })
+        .catch(err => console.log('Update check failed:', err));
+      }
+      
+      // Check immediately and periodically
+      checkForUpdates();
+      setInterval(checkForUpdates, CHECK_INTERVAL);
+      
+      // Also check when page becomes visible (user switches back to tab)
+      document.addEventListener('visibilitychange', () => {
+        if (!document.hidden) {
+          checkForUpdates();
+        }
+      });
+    </script>
+  </body>
+</html>
