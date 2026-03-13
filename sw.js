@@ -1,7 +1,5 @@
-const CACHE_NAME = 'elite-scholar-v1.0.1.2';
+const CACHE_NAME = 'elite-scholar-v1.0.1.3';
 const urlsToCache = [
-  '/',
-  '/index.html',
   '/manifest.json'
 ];
 
@@ -32,23 +30,34 @@ self.addEventListener('fetch', (event) => {
   if (event.request.method !== 'GET') {
     return;
   }
+  
+  const url = new URL(event.request.url);
+  
+  // Never cache HTML files or API calls - always fetch fresh
+  if (
+    url.pathname.endsWith('.html') ||
+    url.pathname === '/' ||
+    url.pathname.includes('/api/') ||
+    url.pathname.includes('/src/')
+  ) {
+    event.respondWith(fetch(event.request));
+    return;
+  }
+  
+  // Cache static assets (CSS, JS, images) with network-first strategy
   event.respondWith(
-    caches.match(event.request)
+    fetch(event.request)
       .then((response) => {
-        if (response) {
-          return response;
-        }
-        return fetch(event.request).then((response) => {
-          if (!response || response.status !== 200 || response.type !== 'basic') {
-            return response;
-          }
+        if (response && response.status === 200) {
           const responseToCache = response.clone();
-          caches.open(CACHE_NAME)
-            .then((cache) => {
-              cache.put(event.request, responseToCache);
-            });
-          return response;
-        });
+          caches.open(CACHE_NAME).then((cache) => {
+            cache.put(event.request, responseToCache);
+          });
+        }
+        return response;
+      })
+      .catch(() => {
+        return caches.match(event.request);
       })
   );
 });
