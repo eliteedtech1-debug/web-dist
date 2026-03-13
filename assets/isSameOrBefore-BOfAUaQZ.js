@@ -1,0 +1,1 @@
+import{w as e}from"./index-B9tpjhs9.js";var o,r={exports:{}};const t=e(o?r.exports:(o=1,r.exports=function(e,o){o.prototype.isSameOrBefore=function(e,o){return this.isSame(e,o)||this.isBefore(e,o)}}));export{t as i};

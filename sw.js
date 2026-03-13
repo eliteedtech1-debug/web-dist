@@ -1,4 +1,4 @@
-const CACHE_NAME = 'elite-scholar-v1.0.6';
+const CACHE_NAME = 'elite-scholar-v1.0.1.1';
 const urlsToCache = [
   '/',
   '/index.html',
