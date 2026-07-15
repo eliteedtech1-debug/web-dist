@@ -1,0 +1,1 @@
+const l=(l,t=!1)=>{if(!l)return null;if("string"!=typeof l)return null;let e=l.replace(/([^:])\/\/+/g,"$1/").replace(/^\/\//,"/");return e.startsWith("/")&&(e=window.location.origin+e),t||e.includes("/thumbnails/")?e:e.replace(/\/uploads\/([^/]+)(\.[a-z]+)$/i,"/uploads/thumbnails/$1_150$2")};export{l as normalizeImageUrl};
