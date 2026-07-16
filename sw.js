@@ -1,4 +1,4 @@
-const CACHE_NAME = 'elite-scholar-v1.0.2.92';
+const CACHE_NAME = 'elite-scholar-v1.0.2.94';
 const urlsToCache = [
   '/manifest.json'
 ];
