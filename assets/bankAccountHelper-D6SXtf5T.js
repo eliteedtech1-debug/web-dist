@@ -1,1 +1,0 @@
-import{_ as c}from"./index-CCr7Jdtr.js";const a=async(a,s)=>new Promise(t=>{const o="api/bank-accounts?school_id=".concat(a).concat(s?"&branch_id=".concat(s):"");c(o,c=>{t(c.success&&c.data?c.data.filter(c=>"Active"===c.status):[])},()=>t([]))});export{a as f};
