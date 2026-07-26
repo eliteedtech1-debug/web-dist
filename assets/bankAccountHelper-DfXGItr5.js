@@ -1,0 +1,1 @@
+import{a4 as a}from"./index-C35nx_gf.js";const t=async(t,c)=>{try{const s="api/bank-accounts?school_id=".concat(t).concat(c?"&branch_id=".concat(c):""),n=await a(s);return n.success&&n.data?n.data.filter(a=>"Active"===a.status):[]}catch(s){return[]}};export{t as f};

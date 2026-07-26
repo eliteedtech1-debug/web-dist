@@ -1,0 +1,1 @@
+import{g as a,B as s,X as i,Y as t,f as e}from"./LineChart-Dk8X3Z3f.js";var p=a({chartName:"BarChart",GraphicalChild:s,defaultTooltipEventType:"axis",validateTooltipEventTypes:["axis","item"],axisComponents:[{axisType:"xAxis",AxisComp:i},{axisType:"yAxis",AxisComp:t}],formatAxisMap:e});export{p as B};
