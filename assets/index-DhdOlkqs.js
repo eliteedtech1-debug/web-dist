@@ -1,1 +1,0 @@
-import{j as t}from"./vendor-react-J-q6is50.js";import o from"./EnhancedSectionManager-CPYpAWk6.js";import"./AppstoreOutlined-DTf8gyNy.js";import"./index-u2rppt0e.js";import"./vendor-xlsx-ChPHbVhZ.js";import"./vendor-socket-_evMST8Z.js";import"./LayoutOutlined-99CYquqA.js";import"./PlusCircleOutlined-DwtSHpo8.js";const r=()=>t.jsx(o,{});export{r as default};
